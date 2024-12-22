@@ -3,7 +3,7 @@ package kadai_021;
 import java.util.HashMap;
 
 public class Dictionary_Chapter21 {
-	HashMap<String, String> dictionaryMap = new HashMap<>();
+	HashMap<String, String> dictionaryMap = new HashMap<String, String>();
 
 public Dictionary_Chapter21() {
 	dictionaryMap.put("apple","りんご");
@@ -20,5 +20,13 @@ public Dictionary_Chapter21() {
 	
 	public String getMeaning(String key) {
 		return dictionaryMap.getOrDefault(key, "その単語は辞書に存在しません");
+	}
+	
+	public boolean addWord(String key, String value) {
+		if (!dictionaryMap.containsKey(key)) {
+			dictionaryMap.put(key, value);
+			return true;
+		}
+		return false;
 	}
 }

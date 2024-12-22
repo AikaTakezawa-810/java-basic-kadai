@@ -5,12 +5,14 @@ public class DictionaryExec_Chapter21 extends Dictionary_Chapter21{
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
 		Dictionary_Chapter21 dictionary = new Dictionary_Chapter21();
-		String keyToSearch = "grape";
+		String[] wordsToCheck = {"apple", "banana", "grape", "orange"};
 		
-		if (dictionary.dictionaryMap.containsKey(keyToSearch)) {
-			System.out.println(keyToSearch + "の意味は" + dictionary.getMeaning(keyToSearch));
+		for (String word : wordsToCheck) {
+		 if (dictionary.dictionaryMap.containsKey(word)) {
+			System.out.println(word + "の意味は" + dictionary.getMeaning(word));
 		} else {
-			System.out.println(keyToSearch + "は辞書に存在しません");
+			System.out.println(word + "は辞書に存在しません");
+		}
 		}
 	}
 }
